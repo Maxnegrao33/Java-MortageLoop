@@ -1,0 +1,29 @@
+public class MortageLoop {
+	public static void main(String [] args){
+		
+		//declarar as variáveis	
+		double principal;
+		double juroAnual;
+		int anos;  
+		
+		//declarar as variáveis na classe Console
+	principal = Console.readDouble ("Montante: ");
+	juroAnual = Console.readDouble
+		("Taxa de juros anuais 7.5%:") / 100;
+	anos = Console.readInt
+		("Número de Anos: ");
+
+	double y;
+		for(y = juroAnual - 0.01;
+		y <= juroAnual + 0.01; y += 0.00125){
+
+		//Cálculo dos juros
+	double juroMensal = y / 12;
+	double pagamento = principal * juroMensal
+		/ (1 - Math.pow(1/(1 + juroMensal),
+		anos * 12)))
+		Format.print(System.out,"Com taxa de %6.3f", 100 * y)
+		Format.print(System.out,"%%, seu pagamento mensal é $%10.2f\n", pagamento)
+          }
+     }
+}
